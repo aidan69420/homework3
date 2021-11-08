@@ -4,15 +4,29 @@ package com.company;
 //(устар. архантропы), — ископаемый вид людей, который рассматривают как непосредственного предка современных людей
 
 public class Erectus extends Homo{
+    private String name;
     private Continent placeOfResidence;
     private Erectus husband;
 
     public Erectus(){}
 
-    public Erectus(int age, boolean isDead, String gender, Continent placeOfResidence, Erectus husband) {
+    public Erectus(String name) {
+        this.name = name;
+    }
+
+    public Erectus(int age, boolean isDead, String gender, String name, Continent placeOfResidence, Erectus husband) {
         super(age, isDead, gender);
+        this.name = name;
         this.placeOfResidence = placeOfResidence;
         this.husband = husband;
+    }
+
+    @Override
+    public String toString() {
+        return "Erectus{" +
+                "placeOfResidence=" + placeOfResidence +
+                ", husband=" + husband +
+                '}';
     }
 
     public void sayHello(Homo companion){
@@ -34,6 +48,10 @@ public class Erectus extends Homo{
 
     public Continent getPlaceOfResidence() {
         return placeOfResidence;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public Erectus getHusband() {

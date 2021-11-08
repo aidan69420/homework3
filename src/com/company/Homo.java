@@ -19,6 +19,15 @@ public class Homo {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Homo{" +
+                "age=" + age +
+                ", isDead=" + isDead +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
+
     public Homo(){}
 
     public int getAge() {

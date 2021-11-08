@@ -4,25 +4,18 @@ package com.company;
 //преимущественно лат. Homo sapiens sapiens[К 2]) — вид рода Люди (Homo)
 
 public final class Sapiens extends Erectus{
-    private String name;
     private String profession;
     private Country homeCountry;
+    private String nationality;
     private long amountOfMoney;
 
-    public Sapiens(String name, String profession, Country homeCountry, long amountOfMoney) {
-        this.name = name;
+    public Sapiens(int age, boolean isDead, String gender, String name, Continent placeOfResidence,
+                   Erectus husband, String profession, Country homeCountry, long amountOfMoney, String nationality) {
+        super(age, isDead, gender, name, placeOfResidence, husband);
         this.profession = profession;
         this.homeCountry = homeCountry;
         this.amountOfMoney = amountOfMoney;
-    }
-
-    public Sapiens(int age, boolean isDead, String gender, Continent placeOfResidence, Erectus husband, String name,
-                   String profession, Country homeCountry, long amountOfMoney) {
-        super(age, isDead, gender, placeOfResidence, husband);
-        this.name = name;
-        this.profession = profession;
-        this.homeCountry = homeCountry;
-        this.amountOfMoney = amountOfMoney;
+        this.nationality = nationality;
     }
 
     @Override
@@ -39,19 +32,19 @@ public final class Sapiens extends Erectus{
     @Override
     public String toString() {
         return "Sapiens{" +
-                "name='" + name + '\'' +
+                " name='" + super.getName() + '\'' +
+                ", isDead='" + super.isDead() + '\'' +
+                ", gender='" + super.getGender() + '\'' +
+                ", age='" + super.getAge() + '\'' +
+                ", husband='" + super.getHusband().getName() + '\'' +
                 ", profession='" + profession + '\'' +
-                ", homeCountry=" + homeCountry +
+                ", homeCountry=" + homeCountry.getName() +
                 ", amountOfMoney=" + amountOfMoney +
                 '}';
     }
 
     public Sapiens(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
+        super(name);
     }
 
     public String getProfession() {
