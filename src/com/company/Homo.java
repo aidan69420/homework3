@@ -2,7 +2,7 @@ package com.company;
 
 //Лю́ди(лат. Homo) — род в семействе гоминиды отряда приматов. Включает вид человек разумный
 
-public class Homo {
+public class Homo implements Printable {
     private int age;
     private boolean isDead;
     private String gender;
@@ -26,6 +26,11 @@ public class Homo {
                 ", isDead=" + isDead +
                 ", gender='" + gender + '\'' +
                 '}';
+    }
+
+    @Override
+    public void printInfo() {
+        System.out.println(this.toString());
     }
 
     public Homo(){}

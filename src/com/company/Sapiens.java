@@ -3,7 +3,7 @@ package com.company;
 //Челове́к разу́мный (лат. Homo sapiens[К 1];
 //преимущественно лат. Homo sapiens sapiens[К 2]) — вид рода Люди (Homo)
 
-public final class Sapiens extends Erectus{
+public final class Sapiens extends Erectus implements Printable{
     private String profession;
     private Country homeCountry;
     private String nationality;
@@ -43,6 +43,14 @@ public final class Sapiens extends Erectus{
                 '}';
     }
 
+
+    public String toSimpleString() {
+        return "Sapiens{" +
+                " name='" + super.getName() + '\'' +
+                '}';
+    }
+
+
     public Sapiens(String name) {
         super(name);
     }
@@ -57,5 +65,10 @@ public final class Sapiens extends Erectus{
 
     public long getAmountOfMoney() {
         return amountOfMoney;
+    }
+
+    @Override
+    public void printInfo() {
+        System.out.println(this.toSimpleString());
     }
 }
